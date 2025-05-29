@@ -125,38 +125,10 @@ import { all } from "axios";
 const { allSettings } = storeToRefs(useSlidersStore());
 let footerResponse = ref(false);
 
-// onMounted(async () => {
-//   await useSlidersStore().getAllSettings();
-//   window.innerWidth <= 600
-//     ? (footerResponse.value = true)
-//     : (footerResponse.value = false);
-//   window.onresize = () => {
-//     window.innerWidth <= 600
-//       ? (footerResponse.value = true)
-//       : (footerResponse.value = false);
-//   };
-// });
-
-// onMounted(async () => {
-//   await useSlidersStore().getAllSettings();
-
-//   const updateFooterResponse = () => {
-//     footerResponse.value = window.innerWidth <= 600;
-//   };
-
-//   updateFooterResponse();
-//   window.addEventListener("resize", updateFooterResponse);
-
-//   onBeforeUnmount(() => {
-//     window.removeEventListener("resize", updateFooterResponse);
-//   });
-// });
-
 const updateFooterResponse = () => {
   footerResponse.value = window.innerWidth <= 768;
 };
 
-// Register the onBeforeUnmount hook before awaiting the asynchronous operation
 onBeforeUnmount(() => {
   window.removeEventListener("resize", updateFooterResponse);
 });
@@ -176,67 +148,3 @@ onMounted(async () => {
   color: var(--col-second);
 }
 </style>
-<!-- <div class="lets-hunt" v-if="!footerResponse">
- 
-      <img
-        src="/src/assets/media/Images/FOOTO.png"
-        style="
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center;
-        "
-        loading="lazy"
-        alt="footer-image"
-      />
-
-      <div class="footer-items">
-        <p class="foot-title">CONTACT US</p>
-
-        <div class="footer-items-box row col-12">
-          <div class="col">
-            <p class="footer-list-title">Egypt</p>
-            <ul class="d-flex flex-column align-items-center mt-4">
-              <li class="address">Address: {{ allSettings.egy_address }}</li>
-              <li>
-                Mobile :
-                <a :href="`tel:${allSettings.egy_mobile}`">
-                  {{ allSettings.egy_mobile }}</a
-                >
-              </li>
-              <li>
-                E-mail:
-                <a :href="`mailto:${allSettings.egy_email}`">
-                  {{ allSettings.egy_email }}</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="col">
-            <p class="footer-list-title">UAE</p>
-            <ul class="d-flex flex-column align-items-center mt-4">
-              <li class="address">Address: {{ allSettings.uae_address }}</li>
-              <li>
-                Mobile :
-                <a :href="`tel:${allSettings.uae_mobile}`">
-                  {{ allSettings.uae_mobile }}</a
-                >
-              </li>
-              <li>
-                E-mail:
-                <a :href="`mailto:${allSettings.uae_email}`">
-                  {{ allSettings.uae_email }}</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="d-flex flex-column align-items-center col">
-            <p class="footer-list-title" style="padding-bottom: 2rem">
-              Social Media
-            </p>
-            <SocialIcon></SocialIcon>
-          </div>
-        </div>
-      </div>
-    </div> -->
-<!-- responsive -->

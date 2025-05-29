@@ -314,14 +314,14 @@ body {
         text-align: center !important;
         padding: 3rem 2rem 0;
         font-weight: 700;
-        font-size: var(--fs-22);
+        font-size: var(--fs-16);
         line-height: var(--line-s-19);
         color: var(--col-second);
       }
       .footer-items-box {
         .footer-list-title {
           font-weight: 800;
-          font-size: var(--fs-18);
+          font-size: var(--fs-16);
           line-height: var(--line-s-19);
           color: var(--col-second);
           cursor: context-menu;
@@ -334,9 +334,10 @@ body {
             width: 100%;
             font-weight: 400;
             color: var(--col-second);
-            font-size: var(--fs-20);
+            font-size: var(--fs-16);
             line-height: var(--line-s-19);
             margin-bottom: 0.8rem;
+
             cursor: pointer;
             &.address {
               cursor: context-menu;
